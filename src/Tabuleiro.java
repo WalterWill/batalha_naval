@@ -7,6 +7,7 @@ public class Tabuleiro {
     //Declara a matriz com as dimensões informadas
     Tabuleiro(int linha, int coluna){
         this.matriz = new String[linha][coluna];
+        oceano();
     }
 
     //Retorna conteudo da celula informada pela posição
@@ -28,6 +29,10 @@ public class Tabuleiro {
         }
     }
 
+    public void oceano(){
+        preencher(" ");
+    }
+
     //Retorna a quantidade de linhas da matriz
     int getLinhas(){
         return this.matriz.length;
@@ -36,5 +41,14 @@ public class Tabuleiro {
     //Retorna a quantidade de colunas da matriz
     int getColunas(){
         return this.matriz[0].length;
+    }
+
+    void imprimirNaTela(){
+        for (int linha = 0; linha < this.getLinhas(); linha++){
+            for (int coluna = 0; coluna < this.getColunas(); coluna++){
+                System.out.print(this.getCelula(linha, coluna));
+            }
+            System.out.println();
+        }
     }
 }

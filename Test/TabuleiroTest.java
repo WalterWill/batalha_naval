@@ -22,4 +22,12 @@ public class TabuleiroTest {
         Assert.assertEquals(linhas, linhasCriadas); //Verifica numero de linhas
         Assert.assertEquals(colunas, colunasCriadas);   //Verifica numero de colunas
     }
+
+    @Test
+    public void DeveInserirLetra(){
+        Tabuleiro a = new Tabuleiro(2,2);
+        a.oceano();
+        a.setCelula("E", 0,1);
+        a.imprimirNaTela();
+    }
 }
